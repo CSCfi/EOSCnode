@@ -1,0 +1,76 @@
+ desc  eoscdata ;
++-----------------------------------+---------------+------+-----+---------+-------+
+| Field                             | Type          | Null | Key | Default | Extra |
++-----------------------------------+---------------+------+-----+---------+-------+
+| avain                             | varchar(64)   | NO   | PRI | NULL    |       |
+| customer_segment                  | int(11)       | YES  |     | NULL    |       |
+| description_en                    | text          | YES  |     | NULL    |       |
+| description_fi                    | text          | YES  |     | NULL    |       |
+| end_user_groups                   | int(11)       | YES  |     | NULL    |       |
+| end_user_guidance_en              | text          | YES  |     | NULL    |       |
+| end_user_guidance_fi              | text          | YES  |     | NULL    |       |
+| how_to_obtain_the_service_en      | text          | YES  |     | NULL    |       |
+| how_to_obtain_the_service_fi      | text          | YES  |     | NULL    |       |
+| interoperable_services            | text          | YES  |     | NULL    |       |
+| interoperable_services_urns       | text          | YES  |     | NULL    |       |
+| interoperable_services_websites   | text          | YES  |     | NULL    |       |
+| link_to_service_en                | text          | YES  |     | NULL    |       |
+| link_to_service_fi                | text          | YES  |     | NULL    |       |
+| link_to_sla_en                    | varchar(1024) | YES  |     | NULL    |       |
+| link_to_sla_fi                    | varchar(1024) | YES  |     | NULL    |       |
+| link_to_training_material_en      | text          | YES  |     | NULL    |       |
+| link_to_user_guide_en             | text          | YES  |     | NULL    |       |
+| link_to_training_material_fi      | text          | YES  |     | NULL    |       |
+| link_to_user_guide_fi             | text          | YES  |     | NULL    |       |
+| name_en                           | varchar(1024) | YES  |     | NULL    |       |
+| name_fi                           | varchar(1024) | YES  |     | NULL    |       |
+| persistent_identifier             | text          | YES  |     | NULL    |       |
+| privacy_policy_en                 | text          | YES  |     | NULL    |       |
+| privacy_policy_fi                 | text          | YES  |     | NULL    |       |
+| protection_level_max_en           | varchar(1024) | YES  |     | NULL    |       |
+| protection_level_max_fi           | varchar(1024) | YES  |     | NULL    |       |
+| protection_level_min_en           | varchar(1024) | YES  |     | NULL    |       |
+| protection_level_min_fi           | varchar(1024) | YES  |     | NULL    |       |
+| purpose_of_the_service_en         | text          | YES  |     | NULL    |       |
+| purpose_of_the_service            | int(11)       | YES  |     | NULL    |       |
+| purpose_of_the_service_fi         | text          | YES  |     | NULL    |       |
+| abbreviation                      | varchar(255)  | YES  |     | NULL    |       |
+| support_email_address             | varchar(1024) | YES  |     | NULL    |       |
+| tagline_en                        | varchar(128)  | YES  |     | NULL    |       |
+| tagline_fi                        | varchar(128)  | YES  |     | NULL    |       |
+| technical_requirements_en         | text          | YES  |     | NULL    |       |
+| technical_requirements_fi         | text          | YES  |     | NULL    |       |
+| terms_of_use_en                   | text          | YES  |     | NULL    |       |
+| terms_of_use_fi                   | text          | YES  |     | NULL    |       |
+| topics_for_website_en             | text          | YES  |     | NULL    |       |
+| topics_for_website_fi             | text          | YES  |     | NULL    |       |
+| urn                               | varchar(1024) | YES  |     | NULL    |       |
+| website                           | varchar(1024) | YES  |     | NULL    |       |
+| determiner_en                     | text          | YES  |     | NULL    |       |
+| determiner_fi                     | text          | YES  |     | NULL    |       |
+| link_to_user_support_contact_form | varchar(255)  | YES  |     | NULL    |       |
+| logo                              | varchar(255)  | YES  |     | NULL    |       |
+| tou_specific_en                   | varchar(255)  | YES  |     | NULL    |       |
+| tou_specific_fi                   | varchar(255)  | YES  |     | NULL    |       |
+| tou_info_en                       | varchar(1000) | YES  |     | NULL    |       |
+| tou_info_fi                       | varchar(1000) | YES  |     | NULL    |       |
+| pricingpolicy_en                  | varchar(255)  | YES  |     | NULL    |       |
+| pricingpolicy_fi                  | varchar(255)  | YES  |     | NULL    |       |
+| tou_title_en                      | varchar(255)  | YES  |     | NULL    |       |
+| tou_title_fi                      | varchar(255)  | YES  |     | NULL    |       |
+| tou_specific_title_en             | varchar(255)  | YES  |     | NULL    |       |
+| tou_specific_title_fi             | varchar(255)  | YES  |     | NULL    |       |
+| service_owner                     | text          | YES  |     | NULL    |       |
+| service_provider                  | text          | YES  |     | NULL    |       |
+| detaileddescription_en            | text          | YES  |     | NULL    |       |
+| detaileddescription_fi            | text          | YES  |     | NULL    |       |
+| toms_en                           | text          | YES  |     | NULL    |       |
+| toms_fi                           | text          | YES  |     | NULL    |       |
+| geographicalAvailabilities        | varchar(64)   | YES  |     | NULL    |       |
+| languageAvailabilities            | varchar(64)   | YES  |     | NULL    |       |
+| securityContactEmail              | varchar(64)   | YES  |     | NULL    |       |
+| trl                               | int(11)       | YES  |     | NULL    |       |
+| accessTypes                       | int(11)       | YES  |     | NULL    |       |
+| nodeId                            | int(11)       | YES  |     | NULL    |       |
++-----------------------------------+---------------+------+-----+---------+-------+
+70 rows in set (0.011 sec)

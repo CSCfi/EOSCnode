@@ -1,0 +1,15 @@
+MariaDB [EOSCnode]> show tables;
++------------------------------+
+| Tables_in_EOSCnode           |
++------------------------------+
+| EOSC_node                    |
+| accesstypes                  |
+| br_eoscdata_customer_segment |
+| br_eoscdata_end_user_groups  |
+| br_eoscdata_purpose          |
+| customer_segment             |
+| end_user_groups              |
+| eoscdata                     |
+| purpose                      |
++------------------------------+
+9 rows in set (0.012 sec)
