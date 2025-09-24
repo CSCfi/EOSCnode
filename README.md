@@ -1,12 +1,14 @@
 # EOSCnode
 ## EOSC Finnish Service catalog
 
-This program is a copy of the CSC Service catalog which is running as https://data.csc.fi and sources are available https://github.com/CSCfi/servicecatalog.
+This java program is a copy of the CSC Service catalog which is running as https://data.csc.fi and sources are available https://github.com/CSCfi/servicecatalog.
 There are minimal documentation of the database in docs folder. This program is simple API of the database.
 
 The differance of the CSC  Service catalog is that it has no vocabulary but this one has some.
 
-The program is running as https://data-test.eosc.fi/ and target address to prodaction is https://data.eosc.fi/ which don't exist yet.
+The program is running as https://data-test.eosc.fi/ and target address to production is https://data.eosc.fi/ which don't exist yet.
+
+The program setting are src/main/resources/application.properties file
 
 ## Used software
 
@@ -65,8 +67,9 @@ You can then execute your native executable with: `./target/palvelukatalog-1.0.0
 If you want to learn more about building native executables, please consult https://quarkus.io/guides/maven-tooling.
 
 ## Building container
-
+```shell script
  podman build -f src/main/docker/Dockerfile.native-micro -t quarkus/node .
+```
 
 PS. There are many dockerfiles but my selection is native-micro
 You can find the container
