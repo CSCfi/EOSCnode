@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EOSC-API 0.0.3</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="EOSC Finnish node service catalog API">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@cscfi/csc-ui@3.0.14/dist/styles/css/theme.css">
+</head>
+<body>
+<c-main disable-layout>
+<c-page>
+    <c-toolbar class="relative">
+        EOSC Service catalog
+        <c-spacer></c-spacer>
+</c-toolbar>
+
+            <h2>EOSC Finnish node Service catalog API</h2>
+            <p>EOSC Finnish node Services Public API</p>
+
+    <h3>The endPoint</h3>
+
+            <p>This page is served by Quarkus. The API end point is in
+                <code><c-link href="/v1/service">/v1/service</c-link></code>.
+    <p>Thera are some vocabularies too:
+    <c-list>
+  <c-list-item>
+         <c-link href="/v1/nodes">nodes</c-link>
+     </c-list-item>
+        <c-list-item>
+         <c-link href="/v1/purposes">purposes</c-link>
+     </c-list-item>
+      <c-list-item>
+          <c-link href="/v1/accesstypes">access types</c-link>
+       </c-list-item>
+        <c-list-item>
+            <c-link href="/v1/customersegments">Customer segments</c-link>
+        </c-list-item>
+        <c-list-item>
+            <c-link href="/v1/endusers">End user groups</c-link>
+        </c-list-item>
+       </c-list>
+    <p>Because you see this page app is very probably live, but you can ask about health</p>
+                <c-link href="/q/health/live">/q/health/live</c-link>
+
+    </c-page>
+</c-main>
+                    <script src="https://cdn.jsdelivr.net/npm/@cscfi/csc-ui@3.0.14/dist/csc-ui/csc-ui.esm.js" type="module"></script>
+</body>
+</html>
