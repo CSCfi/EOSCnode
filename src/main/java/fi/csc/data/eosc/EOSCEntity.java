@@ -101,7 +101,11 @@ public class EOSCEntity extends PanacheEntityBase {
     public String geographicalAvailabilities;
     public String languageAvailabilities;
     public String securityContactEmail;
+    public String categories;
     public int trl;
+    public String order_type;
+    public String field_of_science;
+    public String service_main_contact;
     @ManyToOne
     @JoinColumn(name = "accessTypes")
     public AccessTypes accessTypes;
@@ -109,4 +113,5 @@ public class EOSCEntity extends PanacheEntityBase {
     @JoinColumn(name = "nodeId")
     public EOSCNodes nodeId;
 
+    public Integer iseosc;
 }

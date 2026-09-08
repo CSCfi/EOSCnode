@@ -75,9 +75,10 @@ public class EOSCPalvelu {
     public String detaileddescription_fi;
     public String toms_en;
     public String toms_fi;
-    public String geographicalAvailabilities;
+    public List<String> geographicalAvailabilities;
     public String languageAvailabilities;
     public String securityContactEmail;
+    public List<String> categories;
     public int trl;
     public AccessTypes accessTypes;
     public EOSCNodes nodeId;
@@ -151,13 +152,35 @@ public class EOSCPalvelu {
         this.detaileddescription_fi = e.detaileddescription_fi;
         this.toms_en = e.toms_en;
         this.toms_fi = e.toms_fi;
-        this.geographicalAvailabilities = e.geographicalAvailabilities;
+        this.geographicalAvailabilities = pilkutlistaksi(e.geographicalAvailabilities);
         this.languageAvailabilities = e.languageAvailabilities;
         this.securityContactEmail = e.securityContactEmail;
+        this.categories = pilkutlistaksi(e.categories);
         this.trl = e.trl;
         this.accessTypes = e.accessTypes;
         this.nodeId = e.nodeId;
     }
+
+    /**
+     * Muuttaa pilkuilla erotellun Stringin vaikkapa "fi_affiliated,fi_invited,eosc" listaksi merkkijonoja
+     * @param p String esim: 'Storage Services,Networking Services'
+     * @return List<String>
+     */
+      private List<String> pilkutlistaksi(String p) {
+          List<String> ls = new ArrayList<>();
+          if (null == p) {
+              ls.add("Other");
+              return ls;
+          }
+          String[] sa = p.split(",");
+          for (String s : sa) {
+              String t = s.trim();
+              if (!t.equals("")) {
+                  ls.add(t);
+              }
+          }
+          return ls;
+      }
 
     /**
      * Use vocabulary to show End User Groups

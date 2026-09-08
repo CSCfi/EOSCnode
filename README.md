@@ -1,14 +1,31 @@
 # EOSCnode
-## EOSC Finnish Service catalog
+## EOSC Node Finland Service Catalog
 
-This java program is a copy of the CSC Service catalog which is running as https://data.csc.fi and sources are available https://github.com/CSCfi/servicecatalog.
-There are minimal documentation of the database in docs folder. This program is simple API of the database.
+This java program is a copy of the CSC Service catalog which is running at https://data.csc.fi and source code is available https://github.com/CSCfi/servicecatalog. As CSC External Service catalog shows only metadata of services for research provided or owned by CSC, EOSC Node Finland Service Catalog shows metadata of services provided by other organisations.
 
-The differance of the CSC  Service catalog is that it has no vocabulary but this one has some.
+- There is minimal documentation of the database in docs folder, but documentation will be enhanced. 
+- The program itself is a simple API of the service catalog database.
+- The program is running in https://data.eosc.fi/ .
+- The program setting are src/main/resources/application.properties file.
+- Unlike CSC Service catalog implementation, EOSC Node Finland implementation uses some controlled vocabularies attached to some fields.
 
-The program is running as https://data-test.eosc.fi/ and target address to production is https://data.eosc.fi/ which don't exist yet.
+### Differences between different Service Catalog APIs and endPoints:
 
-The program setting are src/main/resources/application.properties file
+#### CSC External Service catalog
+- Shows only metadata of services for research provided or owned by CSC.
+- Main focus groups are researchers affiliated in Finland and Finnish research organisations, because of the terms of use or other conditions related to some services.
+- Service data model is compliant with Finnish National Data Model.
+- API endPoint is found in https://data.eosc.fi/ and a public user interface of the Service Catalog in https://research.csc.fi/.
+
+#### EOSC Node Finland Service Catalog
+There are two API end points:
+##### Federated services from EOSC Node Finland: https://data.eosc.fi/v1/services
+- Curated list of Finnish services available for users outside of Finland (Open Access services, services with Open Access functionalities (e.g. discovery) and/or services with federated access (MyAccessID).
+- Service Data Model is compliant with EOSC guidelines (Registration of EOSC Service Catalogues, DOI [10.5281/zenodo.17513487](https://doi.org/10.5281/zenodo.17513487)). 
+- Services from other EOSC Nodes are excluded from this endPoint and this endPoint is recommended as a harvesting endPoint for other EOSC Nodes
+###### EOSC Node Finland Service Catalog https://data.eosc.fi//v1/service
+- EOSC Node FInland Service Catalog UI (in [eosc.fi](https://eosc.fi/)) uses this endPoint and it's recommended as a harvesting endPoint for Finnish research organisations.
+- Main focus groups are researchers affiliated in Finland and Finnish research organisations, because of the terms of use or other conditions related to some services.
 
 ## Used software
 

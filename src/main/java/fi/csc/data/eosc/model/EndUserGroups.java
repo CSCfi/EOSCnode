@@ -6,7 +6,7 @@ import jakarta.persistence.*;
 
 @org.hibernate.annotations.Immutable
 @Entity
-@Table(name = "customer_segment")
+@Table(name = "end_user_groups")
 public class EndUserGroups  extends PanacheEntityBase {
      @Id
     //@Column(name = "id", nullable = false)

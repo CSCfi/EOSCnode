@@ -25,6 +25,10 @@ public class ApplicationLifecycle {
      public static Hashtable<Integer, List<Integer>> htbrcg = new Hashtable<>();
      public static Hashtable<Integer, List<Integer>>  htbreug = new Hashtable<>();
      public static Hashtable<Integer, EndUserGroups> hteug = new Hashtable<>();
+     public static Hashtable<Integer, String> eosctarget = new Hashtable<>();
+     public static Hashtable<Integer, Category> eosccategory = new Hashtable<>();
+     public static List<EndUserGroups> leug;
+     public static final String[] languages ={"EN", "FI"};
 
      @Inject
      AgroalDataSource defaultDataSource;
@@ -37,19 +41,19 @@ public class ApplicationLifecycle {
     void onStart(@Observes StartupEvent event) {
         List<Purpose> lpurpose = Purpose.listAll();
         lpurpose.forEach(p -> htpurpose.put(p.id, p));
-        List<EndUserGroups> leug = EndUserGroups.listAll();
+        leug = EndUserGroups.listAll();
         leug.forEach(eug-> hteug.put(eug.id, eug));
         try {
             SQL sql = new SQL(defaultDataSource.getConnection());
             List<BrEOSCDataPurpose> ldatapurpose = sql.haeTarkoitukset();
-            ldatapurpose.forEach(p -> taulutaP(p));
+            ldatapurpose.forEach(this::taulutaP);
             //ldatapurpose.forEach(e -> System.out.println("Purpose " + e.purpose()));
             List<CustomerSegment> lcg = CustomerSegment.listAll();
             lcg.forEach(cs -> htcg.put(cs.id, cs));
             List<BrEOSCDataCustomerSegment> ldatacs = sql.haeAsiakssJoukko();
-            ldatacs.forEach(dcs -> taulutaCS(dcs));
+            ldatacs.forEach(this::taulutaCS);
             List<BrEOSCDataEndusergroups> lserviceeug = sql.loadendusers();
-            lserviceeug.forEach(p -> toTable(p));
+            lserviceeug.forEach(this::toTable);
 
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -140,7 +144,26 @@ public class ApplicationLifecycle {
 
     }
 
-
+    /**
+     * EOSC vocabularies
+     * https://docs.google.com/document/d/1CcUfiJCttIqN40Y-F84-mphu7Ao8nJTm/edit#heading=h.hqrxf2he8vr
+     */
+    static {
+        eosccategory.put(1, new Category("category-access_physical_and_eInfrastructures-compute"));
+        eosccategory.put(2, new Category("category-access_physical_and_eInfrastructures-data_storage"));
+        eosccategory.put(3, new Category("category-access_physical_and_eInfrastructures-data_storage"));
+        eosccategory.put(4, new Category("category-sharing_and_discovery-data"));
+        eosccategory.put(5, new Category("category-access_physical_and_eInfrastructures-network"));
+        eosctarget.put(1, "target_user-research_groups");
+        eosctarget.put(2, "target_user-students");
+        eosctarget.put(3, "target_user-other");
+        eosctarget.put(4, "target_user-business");
+        eosctarget.put(5, "target_user-providers");
+        eosctarget.put(6, "target_user-research_infrastructure_managers");
+        eosctarget.put(7, "target_user-innovators");
+        eosctarget.put(8, "target_user-business");
+        eosctarget.put(9, "target_user-research_organisations");
+    }
 
 
 }
