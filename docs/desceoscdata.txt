@@ -1,8 +1,8 @@
- desc  eoscdata ;
 +-----------------------------------+---------------+------+-----+---------+-------+
 | Field                             | Type          | Null | Key | Default | Extra |
 +-----------------------------------+---------------+------+-----+---------+-------+
-| avain                             | varchar(64)   | NO   | PRI | NULL    |       |
+| intid                             | int(11)       | NO   | PRI | NULL    |       |
+| avain                             | varchar(64)   | NO   | UNI | NULL    |       |
 | customer_segment                  | int(11)       | YES  |     | NULL    |       |
 | description_en                    | text          | YES  |     | NULL    |       |
 | description_fi                    | text          | YES  |     | NULL    |       |
@@ -66,11 +66,17 @@
 | detaileddescription_fi            | text          | YES  |     | NULL    |       |
 | toms_en                           | text          | YES  |     | NULL    |       |
 | toms_fi                           | text          | YES  |     | NULL    |       |
+| order_type                        | varchar(64)   | YES  |     | NULL    |       |
+| field_of_science                  | varchar(255)  | YES  |     | NULL    |       |
 | geographicalAvailabilities        | varchar(64)   | YES  |     | NULL    |       |
 | languageAvailabilities            | varchar(64)   | YES  |     | NULL    |       |
 | securityContactEmail              | varchar(64)   | YES  |     | NULL    |       |
+| categories                        | varchar(255)  | YES  |     | NULL    |       |
 | trl                               | int(11)       | YES  |     | NULL    |       |
+| service_main_contact              | varchar(64)   | YES  |     | NULL    |       |
 | accessTypes                       | int(11)       | YES  |     | NULL    |       |
+| iseosc                            | int(11)       | YES  |     | NULL    |       |
 | nodeId                            | int(11)       | YES  |     | NULL    |       |
 +-----------------------------------+---------------+------+-----+---------+-------+
-70 rows in set (0.011 sec)
+76 rows in set (0.289 sec)
+
