@@ -28,7 +28,7 @@ public class ApplicationLifecycle {
      public static Hashtable<Integer, String> eosctarget = new Hashtable<>();
      public static Hashtable<Integer, Category> eosccategory = new Hashtable<>();
      public static List<EndUserGroups> leug;
-     public static final String[] languages ={"EN", "FI"};
+     //public static final String[] languages ={"EN", "FI"};
 
      @Inject
      AgroalDataSource defaultDataSource;
@@ -85,7 +85,7 @@ public class ApplicationLifecycle {
         if (null == li) {
             li = new ArrayList<>();
             li.add(p.eug_id());
-            LOG.info("EUG initial add " + p.palvelu() + "+" + p.eug_id());
+            //LOG.info("EUG initial add " + p.palvelu() + "+" + p.eug_id());
             htbreug.put(p.palvelu(), li);
         }   else {
             li.add(p.eug_id());
@@ -111,10 +111,11 @@ public class ApplicationLifecycle {
         if (null == li) {
             li = new ArrayList<>();
             li.add(p.purpose());
+            LOG.info("Purpose initial add "+ p.palvelu() +"+"+ p.purpose());
             datapurpose.put(p.palvelu(), li);
         } else {
             li.add(p.purpose());
-            LOG.info("Purpose add "+ p.palvelu() +"+"+ p.purpose());
+            //LOG.info("Purpose add "+ p.palvelu() +"+"+ p.purpose());
         }
     }
 
@@ -154,14 +155,28 @@ public class ApplicationLifecycle {
         eosccategory.put(3, new Category("category-access_physical_and_eInfrastructures-data_storage"));
         eosccategory.put(4, new Category("category-sharing_and_discovery-data"));
         eosccategory.put(5, new Category("category-access_physical_and_eInfrastructures-network"));
+        eosccategory.put(7, new Category("service_classification-research_assessment_monitoring"));
+        eosccategory.put(8, new Category("service_classification-publishing_discovery"));
+        eosccategory.put(9, new Category("service_classification-data_management_curation"));
+        eosccategory.put(10, new Category("service_classification-prosessing_analysis"));
+        eosccategory.put(11, new Category("service_classification-compute_services"));
+        eosccategory.put(12, new Category("service_classification-storage_services"));
+        eosccategory.put(13, new Category("service_classification-networking_services"));
+        eosccategory.put(14, new Category("service_classification-science_gateways"));
+        eosccategory.put(15, new Category("service_classificatio-instrumentation_physical_resources"));
+        eosccategory.put(16, new Category("service_classification-research_support_collaboration"));
+        eosccategory.put(17, new Category("service_classification-training_skills_development"));
+        eosccategory.put(18, new Category("service_classification-infrastructure_operations_services"));
+        eosccategory.put(19, new Category("service_classification-persistent_identifiers"));
+        eosccategory.put(20, new Category("service_classification-other"));
         eosctarget.put(1, "target_user-research_groups");
         eosctarget.put(2, "target_user-students");
         eosctarget.put(3, "target_user-other");
-        eosctarget.put(4, "target_user-business");
+        eosctarget.put(4, "target_user-businesses");
         eosctarget.put(5, "target_user-providers");
         eosctarget.put(6, "target_user-research_infrastructure_managers");
         eosctarget.put(7, "target_user-innovators");
-        eosctarget.put(8, "target_user-business");
+        eosctarget.put(8, "target_user-businesses");
         eosctarget.put(9, "target_user-research_organisations");
     }
 

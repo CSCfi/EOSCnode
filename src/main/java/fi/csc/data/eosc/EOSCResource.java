@@ -11,6 +11,8 @@ import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.QueryParam;
 import jakarta.ws.rs.core.MediaType;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import static fi.csc.data.eosc.ApplicationLifecycle.leug;
@@ -45,10 +47,16 @@ public class EOSCResource {
         if (null == from) {
             from = 0;
         }
-        List<EOSCFrame> lef = kehystä(eoscservice(EOSCEntity.listAll()));
+        ArrayList<EOSCFrame> lef = new ArrayList<>(kehystä(eoscservice(EOSCEntity.listAll())));
         int to = from + quantity;
         if (to > lef.size()) {
             to = lef.size();
+        }
+        if (from > lef.size())
+            return new EOSCResult(0, from, quantity, Collections.emptyList());
+        if (to <= lef.size()) {
+            int n = to - from; //new quantity
+            return new EOSCResult(n, from, to, lef.subList(from, to));
         }
         return new EOSCResult(lef.size(), from, to, lef);
     }
