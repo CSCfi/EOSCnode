@@ -55,8 +55,8 @@ public class EOSCResource {
         if (from > lef.size())
             return new EOSCResult(0, from, quantity, Collections.emptyList());
         if (to <= lef.size()) {
-            int n = to - from; //new quantity
-            return new EOSCResult(n, from, to, lef.subList(from, to));
+            //int n = to - from; //new quantity
+            return new EOSCResult(lef.size(), from, to, lef.subList(from, to));
         }
         return new EOSCResult(lef.size(), from, to, lef);
     }

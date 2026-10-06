@@ -158,7 +158,7 @@ public class ApplicationLifecycle {
         eosccategory.put(7, new Category("service_classification-research_assessment_monitoring"));
         eosccategory.put(8, new Category("service_classification-publishing_discovery"));
         eosccategory.put(9, new Category("service_classification-data_management_curation"));
-        eosccategory.put(10, new Category("service_classification-prosessing_analysis"));
+        eosccategory.put(10, new Category("service_classification-data_processing_analysis"));
         eosccategory.put(11, new Category("service_classification-compute_services"));
         eosccategory.put(12, new Category("service_classification-storage_services"));
         eosccategory.put(13, new Category("service_classification-networking_services"));
